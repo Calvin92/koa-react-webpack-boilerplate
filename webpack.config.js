@@ -2,6 +2,8 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const dev = process.env.BUILD_ENV === 'dev'
+
 module.exports = {
 	entry: './client/index.js',
 	output: {
@@ -32,10 +34,11 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'Custom template using Handlebars',
+			title: '京东字体服务',
 			template: './view/index.ejs',
 			hash: true,
-			inject: true,
+			inject: !dev,
+			cache: false,
 		}),
 		new ExtractTextPlugin({
 			filename: 'css/vendor.css', // 相对output

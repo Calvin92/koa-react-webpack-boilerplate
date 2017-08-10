@@ -2,16 +2,16 @@ const Koa = require('koa')
 const app = new Koa()
 const path = require('path')
 const serve = require('koa-static')
-const render = require('koa-ejs')
+// const render = require('koa-ejs')
 const router = require('./server/router')
 
-render(app, {
-	root: path.join(__dirname, 'view'),
-	layout: false,
-	viewExt: 'ejs',
-	cache: false,
-	debug: true,
-})
+// render(app, {
+// 	root: path.join(__dirname, 'view'),
+// 	layout: false,
+// 	viewExt: 'ejs',
+// 	cache: false,
+// 	debug: true,
+// })
 
 app.use(serve('./public'))
 

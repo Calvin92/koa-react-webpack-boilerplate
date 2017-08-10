@@ -1,9 +1,15 @@
 <html>
   <head>
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>京东字体</title>
+    <% if(htmlWebpackPlugin.options.dev) { %>
+    <link rel="stylesheet" href="http://localhost:3800/css/vendor.css" />
+    <% } %>
   </head>
   <body>
     <h3>koa ejs</h3>
 		<div id="container"></div>
+    <% if(htmlWebpackPlugin.options.dev) {%>
+    <script type="text/javascript" src="http://localhost:3800/js/main.js"></script>
+    <% } %>
   </body>
 </html>

@@ -7,7 +7,7 @@ class App extends Component {
 	render () {
 		return (
 			<div className="content">
-				Hello React
+				Hello Reactfd
 			</div>
 		)
 	}

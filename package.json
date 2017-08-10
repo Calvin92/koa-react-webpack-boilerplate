@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "server": "node app.js",
-    "dev": "webpack-dev-server --port 3800 --progress --config webpack.config.js",
+    "production": "BUILD_ENV=production webpack --config webpack.config.js",
+    "dev": "BUILD_ENV=dev webpack --config webpack.config.js && npm run build",
+    "build": "webpack-dev-server --port 3800 --progress --hot --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
